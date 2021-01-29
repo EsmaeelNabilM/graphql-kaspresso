@@ -1,0 +1,20 @@
+query UserProfileQuery{
+  viewer {
+    id
+    name
+    bio
+    bioHTML
+    avatarUrl
+#    email
+#    twitterUsername
+#    websiteUrl
+    company
+    contributionsCollection {
+      totalCommitContributions
+    }
+    repositories {
+      totalCount
+    }
+
+  }
+}
