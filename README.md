@@ -3,9 +3,9 @@
 **GraphQL with Kaspresso Ui Testing Example**
 ---
 
-- ##### Get the [Github Personal Access Token](https://github.com/settings/tokens) 
+- ##### Get your [Github Personal Access Token](https://github.com/settings/tokens) 
 
-- ##### `CREATE` `keys.properties` file with below `keys` and `ADD` it to your `ROOT` project folder 
+- ##### `ADD IT` in `keys.properties` file that is located in `ROOT` project folder 
 
 ``` json
 token_header_name="Authorization"
