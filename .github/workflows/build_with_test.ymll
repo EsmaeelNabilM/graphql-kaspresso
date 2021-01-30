@@ -1,0 +1,24 @@
+## displayed name
+#name: Build & Test
+#
+## what actions should run in response to
+#on: push
+#
+## tasks that will be run on each pull request
+#jobs:
+#  build:
+#    # define the environment
+#    runs-on: ubuntu-latest
+#    # the tasks it self
+#    steps:
+#      - uses: actions/checkout@v2 # gets the code from the repo to the environment
+#      - name: Set up JDK
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: 1.8
+#
+#      - name: run tests
+#        run: ./gradlew test
+#
+#      - name: Build Project
+#        run: ./gradlew assemble
