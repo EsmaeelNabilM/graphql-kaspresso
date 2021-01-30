@@ -5,7 +5,17 @@ plugins {
     id "com.apollographql.apollo" version "2.5.2"
 }
 
+// retrieve Api keys.
+File keystoreProperties = rootProject.file("keys.properties")
+def props = new Properties()
+if (keystoreProperties.exists()) {
+    props.load(new FileInputStream(keystoreProperties))
+} else {
+    props['github_token'] = 'none'
+}
+
 android {
+    def stringType = "String"
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -17,6 +27,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,6 +35,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            // you can use this with different values inside buildTypes.
+            buildConfigField(stringType, "GITHUB_TOKEN", props['github_token'])
+            buildConfigField(stringType, "BASE_URL", props['base_url'])
+            buildConfigField(stringType, "TOKEN_HEADER_NAME", props['token_header_name'])
         }
     }
     compileOptions {

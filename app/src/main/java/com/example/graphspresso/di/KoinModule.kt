@@ -28,7 +28,7 @@ val networkModule = module {
 
     fun provideApolloClient(client: OkHttpClient): ApolloClient {
         return ApolloClient.builder()
-            .serverUrl("https://api.github.com/graphql")
+            .serverUrl(BuildConfig.BASE_URL)
             .okHttpClient(client)
             .build()
     }
@@ -48,7 +48,7 @@ val networkModule = module {
             val original = chain.request()
             chain.proceed(
                 chain.request().newBuilder()
-                    .addHeader("Authorization", "bearer ee39f442ab53e9a6bf96d6a0028e43af627f96de")
+                    .addHeader(BuildConfig.TOKEN_HEADER_NAME, BuildConfig.GITHUB_TOKEN)
                     .method(original.method, original.body)
                     .build()
             )
