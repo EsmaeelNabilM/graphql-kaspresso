@@ -7,8 +7,8 @@ import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
-import org.koin.core.KoinComponent
-import org.koin.core.inject
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import sa.gov.mos.utils.ResourcesHandler
 import java.io.IOException
 

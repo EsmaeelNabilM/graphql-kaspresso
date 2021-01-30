@@ -42,7 +42,7 @@ class ReposAdapter(
                     "Stars : ${itemModel.fragments.repositoryFragment.stargazers.totalCount}"
                 langs.text =
                     "Languages : ${getLanguages(itemModel.fragments.repositoryFragment.languages?.nodes)}"
-                root.setOnClickListener { onItemClicked(itemModel) }
+                name.setOnClickListener { onItemClicked(itemModel) }
             }
         }
 

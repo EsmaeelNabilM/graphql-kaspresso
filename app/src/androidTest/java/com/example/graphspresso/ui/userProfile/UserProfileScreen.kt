@@ -1,6 +1,7 @@
 package com.example.graphspresso.ui.userProfile
 
 import com.agoda.kakao.image.KImageView
+import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KTextView
 import com.example.graphspresso.R
 import com.kaspersky.kaspresso.screens.KScreen
@@ -13,6 +14,6 @@ class UserProfileScreen() : KScreen<UserProfileScreen>() {
     val name = KTextView { withId(R.id.name) }
     val bio = KTextView { withId(R.id.bio) }
     val repos = KTextView { withId(R.id.repos) }
-    val reposCount = KTextView { withId(R.id.reposCount) }
+    val reposCount = KButton { withId(R.id.reposCount) }
 
 }

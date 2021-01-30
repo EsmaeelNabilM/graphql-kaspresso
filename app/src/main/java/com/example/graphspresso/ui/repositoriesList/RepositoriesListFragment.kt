@@ -1,22 +1,22 @@
 package com.example.graphspresso.ui.repositoriesList
 
 import android.widget.Toast
+import androidx.navigation.fragment.navArgs
 import com.example.graphspresso.GithubRepositoriesQuery
 import com.example.graphspresso.R
-import com.example.graphspresso.databinding.ActivityMainBinding
 import com.example.graphspresso.databinding.RepositoriesListFragmentBinding
 import com.example.graphspresso.type.OrderDirection
 import com.example.graphspresso.type.RepositoryOrderField
 import com.example.graphspresso.ui.base.BaseFragment
 import com.example.graphspresso.ui.base.ViewState
 import com.example.graphspresso.utils.EndlessRecyclerOnScrollListener
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RepositoriesListFragment :
     BaseFragment<RepositoriesListFragmentBinding, ReposViewModel>(R.layout.repositories_list_fragment) {
 
-    private val TAG = "MainActivity"
-
+    val userData: RepositoriesListFragmentArgs by navArgs()
     override val viewModel: ReposViewModel by viewModel()
     lateinit var reposAdapter: ReposAdapter
 
@@ -27,18 +27,19 @@ class RepositoriesListFragment :
     }
 
     override fun setup() {
+
         reposAdapter = ReposAdapter {
-            Toast.makeText(
-                requireContext(),
-                it.fragments.repositoryFragment.name,
-                Toast.LENGTH_SHORT
-            ).show()
+            Snackbar.make(binder.root, it.fragments.repositoryFragment.name, Snackbar.LENGTH_LONG).show()
         }
 
+        with(binder) {
+            username.text = userData.username
+            userReposCount.text = userData.reposCount.toString()
 
-        binder.recycler.apply {
-            adapter = reposAdapter
-            addOnScrollListener(paginationListener)
+            recycler.apply {
+                adapter = reposAdapter
+                addOnScrollListener(paginationListener)
+            }
         }
 
         requestRepos(lastCount = reposAdapter.itemCount)

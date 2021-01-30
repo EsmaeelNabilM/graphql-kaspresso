@@ -9,11 +9,24 @@
         android:id="@+id/RepositoriesListFragment"
         android:name="com.example.graphspresso.ui.repositoriesList.RepositoriesListFragment"
         android:label="repositories list"
-        tools:layout="@layout/repositories_list_fragment" />
+        tools:layout="@layout/repositories_list_fragment" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="reposCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
     <fragment
         android:id="@+id/UserProfileFragment"
         android:name="com.example.graphspresso.ui.userProfile.UserProfileFragment"
         android:label="user profile"
-        tools:layout="@layout/repositories_list_fragment" />
+        tools:layout="@layout/user_profile_fragment" >
+        <action
+            android:id="@+id/action_UserProfileFragment_to_RepositoriesListFragment"
+            app:destination="@id/RepositoriesListFragment" />
+    </fragment>
 </navigation>
