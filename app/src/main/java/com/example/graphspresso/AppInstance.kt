@@ -14,6 +14,7 @@ class AppInstance : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         initKoin()
+        BuildConfig.APPLICATION_ID
     }
 
     private fun initKoin() {
