@@ -5,7 +5,7 @@ import android.graphics.Outline
 import android.view.View
 import android.view.ViewOutlineProvider
 import androidx.navigation.findNavController
-import coil.api.load
+import coil.load
 import com.example.graphspresso.R
 import com.example.graphspresso.UserProfileQuery
 import com.example.graphspresso.databinding.UserProfileFragmentBinding

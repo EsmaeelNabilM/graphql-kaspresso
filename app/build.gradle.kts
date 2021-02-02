@@ -73,56 +73,53 @@ android {
 }
 
 dependencies {
-    implementation(Libs.kotlin_stdlib)
-    implementation(Libs.multidex)
 
-    //Android
-    implementation(Libs.appcompat)
-    implementation(Libs.androidx_core_core_ktx)
-    implementation(Libs.material)
-    implementation(Libs.constraintlayout)
-    implementation(Libs.recyclerview)
 
-    //Navigation
-    implementation(Libs.navigation_fragment_ktx)
-    implementation(Libs.navigation_ui_ktx)
+    implementation(Kotlin.stdlib.jdk8)
+    implementation(AndroidX.multidex)
+    implementation(AndroidX.core.ktx)
+    implementation(AndroidX.appCompat)
+    implementation(Google.android.material)
+    implementation(AndroidX.constraintLayout)
 
-    // Networking
-    implementation(Libs.apollo_runtime)
-    implementation(Libs.apollo_normalized_cache_sqlite)
-    implementation(Libs.apollo_coroutines_support)
-    implementation(Libs.apollo_android_support)
-    implementation(Libs.logging_interceptor)
-    implementation(Libs.okhttp)
+    implementation(Square.okHttp3.okHttp)
+    implementation(Square.okHttp3.loggingInterceptor)
 
-    //Loader, Image loading
-    implementation(Libs.avi_loader)
-    implementation(Libs.coil)
+    implementation("com.apollographql.apollo:apollo-runtime:_")
+    implementation("com.apollographql.apollo:apollo-normalized-cache-sqlite:_")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:_")
+    implementation("com.apollographql.apollo:apollo-android-support:_")
 
-    // Coroutines, ViewModel, LiveData
-    implementation(Libs.kotlinx_coroutines_core)
-    implementation(Libs.kotlinx_coroutines_android)
-    implementation(Libs.lifecycle_viewmodel_ktx)
-    implementation(Libs.lifecycle_runtime_ktx)
-    implementation(Libs.lifecycle_viewmodel_ktx)
-    implementation(Libs.lifecycle_livedata_ktx)
+    implementation(AndroidX.lifecycle.runtime)
+    implementation(AndroidX.lifecycle.viewModelKtx)
+    implementation(AndroidX.lifecycle.liveDataKtx)
 
-    // DI - Koin
-    implementation(Libs.koin_android)
-    implementation(Libs.koin_androidx_viewmodel)
-    implementation(Libs.koin_androidx_scope)
-    implementation(Libs.koin_androidx_ext)
+    implementation(AndroidX.recyclerView)
+    implementation(AndroidX.navigation.fragmentKtx)
+    implementation(AndroidX.navigation.uiKtx)
+    implementation(KotlinX.coroutines.core)
+    implementation(KotlinX.coroutines.android)
 
+    implementation(COIL)
+
+    // Koin
+    implementation("org.koin:koin-android:_")
+    implementation("org.koin:koin-androidx-viewmodel:_")
+    implementation("org.koin:koin-androidx-scope:_")
+    implementation("org.koin:koin-androidx-ext:_")
+
+    //Loading
+    implementation("com.wang.avi:library:_")
 
     // Testing
-    implementation(Libs.androidx_test_core)
-    androidTestImplementation(Libs.androidx_test_core_ktx)
-    androidTestImplementation(Libs.junit)
-    androidTestImplementation(Libs.junit_ktx)
-    androidTestImplementation(Libs.androidx_test_runner)
-    androidTestImplementation(Libs.androidx_test_rules)
-    androidTestImplementation(Libs.kaspresso)
-    androidTestImplementation(Libs.kotest)
+    implementation(AndroidX.test.core)
+    implementation(AndroidX.test.coreKtx)
+    implementation(AndroidX.test.ext.junit)
+    implementation(AndroidX.test.ext.junitKtx)
+    implementation(AndroidX.test.runner)
+    implementation(AndroidX.test.rules)
+    androidTestImplementation("com.kaspersky.android-components:kaspresso:_")
+    androidTestImplementation ("io.kotlintest:kotlintest-runner-junit5:_")
 
 
 }
