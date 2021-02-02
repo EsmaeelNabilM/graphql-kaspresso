@@ -72,7 +72,7 @@ class UserReposListScenario(private val standAloneTest: Boolean = true) : Scenar
 
                     flakySafely(2_000) {
                         snackbar.isVisible()
-                        val nameString = name.view.interaction.getText()
+                        val nameString = name.getText()
                         snackbar.text.hasText(nameString)
                     }
                 }

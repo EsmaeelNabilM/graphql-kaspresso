@@ -1,10 +1,14 @@
 package com.example.graphspresso.ui.scenarios
 
+import androidx.core.text.isDigitsOnly
+import com.example.graphspresso.testUtils.getText
 import com.example.graphspresso.testUtils.goto
 import com.example.graphspresso.ui.MainActivity
 import com.example.graphspresso.ui.userProfile.UserProfileScreen
 import com.kaspersky.kaspresso.testcases.api.scenario.Scenario
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
+import io.kotlintest.shouldBe
+import org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * Created by esmaeel on Jan, 2021
@@ -45,7 +49,9 @@ class UserProfileTestScenario(private val withEndNavigation: Boolean = false) : 
                     reposCount {
                         isVisible()
                         isClickable()
-                        containsText("4")
+                        hasAnyText()
+
+                        getText().isDigitsOnly() shouldBe true
                     }
 
                 }
