@@ -23,11 +23,15 @@ github_token="bearer Github_Personal_Access_Token"
 |[Kaspresso](https://github.com/KasperskyLab/Kaspresso)|[Scenarios](https://github.com/EsmaeelNabilM/graphql-kaspresso/tree/master/app/src/androidTest/java/com/example/graphspresso/ui/scenarios)|
 |[Hiding secretKeys in properties Files](https://github.com/EsmaeelNabilM/graphql-kaspresso/blob/master/app/build.gradle.kts#L42)|
 |[Github Actions](https://github.com/EsmaeelNabilM/graphql-kaspresso/tree/master/.github/workflows)|
-|[Dependencies Versions & update plugin](https://github.com/jmfayard/refreshVersions)|[buildSrc](https://github.com/EsmaeelNabilM/graphql-kaspresso/tree/master/buildSrc/src/main/kotlin)|
+|[Dependencies Versions & update plugin](https://github.com/jmfayard/refreshVersions)|[how to add the plugin](https://github.com/EsmaeelNabilM/graphql-kaspresso/blob/master/settings.gradle.kts)|
 
 ---
-###### to get latest dependencies versions run this gradle command :
+###### to add new `Dependencies` you two ways:
+- do it like this [Video](https://youtu.be/VhYERonB8co)
+- or add the dependency in `build.gradle.kts` like this  
+```implementation("com.wang.avi:library:_")```
+###### to get latest `Dependencies` versions run this gradle command :
 ```
 ./gradlew refreshVersions
 ```
-##### latest versions will be [here](https://github.com/EsmaeelNabilM/graphql-kaspresso/blob/master/gradle.properties) and [here](https://github.com/EsmaeelNabilM/graphql-kaspresso/blob/master/buildSrc/src/main/kotlin/Versions.kt) to select from.
+##### latest versions will be in [versions.properties](https://github.com/EsmaeelNabilM/graphql-kaspresso/blob/master/versions.properties) to select from.
